@@ -125,7 +125,7 @@ Your app was upgraded to bundler #{ BUNDLER_VERSION }.
 Previously you had a successful deploy with bundler #{ old_bundler_version }.
 
 If you see problems related to the bundler version please refer to:
-http://doc.scalingo.com/languages/ruby/bundle-configuration
+https://doc.scalingo.com/languages/ruby/bundler-configuration
 
 WARNING
     end
@@ -936,7 +936,6 @@ params = CGI.parse(uri.query || "")
       old_rubygems_version    = nil
       ruby_version_cache      = "ruby_version"
       buildpack_version_cache = "buildpack_version"
-      cf_buildpack_version_cache = "cf_buildpack_version"
       bundler_version_cache   = "bundler_version"
       rubygems_version_cache  = "rubygems_version"
       stack_cache             = "stack"
@@ -1013,7 +1012,6 @@ params = CGI.parse(uri.query || "")
       FileUtils.mkdir_p(heroku_metadata)
       @metadata.write(ruby_version_cache, full_ruby_version, false)
       @metadata.write(buildpack_version_cache, BUILDPACK_VERSION, false)
-      @metadata.write(cf_buildpack_version_cache, CF_BUILDPACK_VERSION, false)
       @metadata.write(bundler_version_cache, BUNDLER_VERSION, false)
       @metadata.write(rubygems_version_cache, rubygems_version, false)
       @metadata.write(stack_cache, @stack, false)

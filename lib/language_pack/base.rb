@@ -16,7 +16,7 @@ class LanguagePack::Base
   include LanguagePack::ShellHelpers
   extend LanguagePack::ShellHelpers
 
-  VENDOR_URL           = ENV['BUILDPACK_VENDOR_URL'] || "https://s3-external-1.amazonaws.com/heroku-buildpack-ruby"
+  VENDOR_URL           = ENV['BUILDPACK_VENDOR_URL'] || "https://ruby-binaries.scalingo.com/heroku-buildpack-ruby"
   DEFAULT_LEGACY_STACK = "cedar"
   ROOT_DIR             = File.expand_path("../../..", __FILE__)
 
@@ -111,7 +111,7 @@ class LanguagePack::Base
   def warn_webserver
     return if File.exist?("Procfile")
     msg =  "No Procfile detected, using the default web server (webrick)\n"
-    msg << "http://doc.scalingo.com/languages/ruby/web-server"
+    msg << "https://doc.scalingo.com/languages/ruby/web-server"
     warn msg
   end
 
